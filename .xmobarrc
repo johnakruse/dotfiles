@@ -1,0 +1,23 @@
+Config { font = "xft:Droid Sans Mono:size=9:antialias=true"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 96
+       , alpha = 150
+       , commands = [ Run Weather "KVLL" ["--template", "<fc=#4682B4><tempC></fc>°C, <skyCondition>, hum: <fc=#4682B4><rh></fc>%"] 6000
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Date "%F (%a) %T" "date" 10
+                    , Run BatteryP ["BAT0"]
+                        ["-t", "<acstatus><watts> (<left>%)",
+                        "-L", "10", "-H", "80", "-p", "3",
+                        "--", "-O", "<fc=green>On</fc> - ", "-i", "",
+                        "-L", "-15", "-H", "-5",
+                        "-l", "red", "-m", "blue", "-h", "green"]
+                        300
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %battery% | %cpu% | %memory% | <fc=#ee9a00>%date%</fc> | %KVLL%    "
+       }
