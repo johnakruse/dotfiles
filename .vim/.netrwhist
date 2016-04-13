@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/john/uportal/tomcat-8/logs'
+let g:netrw_dirhist_2='/home/john/uportal/uportal/jasig/AdvisorSuite'
+let g:netrw_dirhist_3='/home/john/uportal/uportal/jasig'
+let g:netrw_dirhist_4='/home/john/uportal/uportal/jasig/AdvisorSuite'
+let g:netrw_dirhist_5='/home/john/uportal/uportal/jasig/MapPortlet'
+let g:netrw_dirhist_6='/home/john/uportal/uportal/jasig/oldLB/LeaveBalancePortlet/src/main/resources'

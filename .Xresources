@@ -1,0 +1,13 @@
+xterm*locale: true
+xterm*metaSendsEscape: true
+xterm*saveLines: 4096
+xterm*background: grey7
+xterm*foreground: goldenrod
+xterm*faceName: Liberation Mono:size=11:antialias=false
+xterm*font: 7x13
+URxvt.font: xft:Liberation Mono:bold:size=11
+URxvt*depth: 32
+URxvt*foreground: #daa520
+URxvt*background: rgba:0000/0000/0000/8888
+URxvt*shading: 0
+URxvt*scrollBar: false
