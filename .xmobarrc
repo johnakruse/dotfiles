@@ -1,23 +1,20 @@
-Config { font = "xft:Droid Sans Mono:size=9:antialias=true"
+Config { font = "xft:DejaVu Sans:bold:size=14,AR PL UKai CN:book:size=18"
        , bgColor = "black"
        , fgColor = "grey"
-       , position = TopW L 96
-       , alpha = 150
-       , commands = [ Run Weather "KVLL" ["--template", "<fc=#4682B4><tempC></fc>°C, <skyCondition>, hum: <fc=#4682B4><rh></fc>%"] 6000
-                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
-                    , Run Date "%F (%a) %T" "date" 10
+       , position = Static { xpos = 0, ypos = 0, width = 1825, height = 30}
+       , alpha = 140
+       , commands = [ Run Date "%F (%a) %T" "date" 10
                     , Run BatteryP ["BAT0"]
-                        ["-t", "<acstatus><watts> (<left>%)",
+                        ["-t", "<acstatus> (<left>%)",
                         "-L", "10", "-H", "80", "-p", "3",
                         "--", "-O", "<fc=green>On</fc> - ", "-i", "",
                         "-L", "-15", "-H", "-5",
                         "-l", "red", "-m", "blue", "-h", "green"]
                         300
-                    , Run StdinReader
+                    , Run PipeReader "/tmp/.currenttile" "tile"
+                    , Run StdinReader 
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %battery% | %cpu% | %memory% | <fc=#ee9a00>%date%</fc> | %KVLL%    "
+       , template = "%StdinReader% }%tile%{ %battery% | <fc=#ee9a00>%date%</fc> "
        }
