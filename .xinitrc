@@ -1,11 +1,8 @@
-xrandr --output eDP-1 --mode 1366x768
-xrandr --output VGA-1 --right-of eDP-1 --mode 1440x900 & 
+xcompmgr -cCf -D5 &
 
 sleep 1
 
-xcompmgr -cf -D5 &
-
-hsetroot -fill /home/john/wallpapers/wallpaper2.jpg &
+hsetroot -cover /home/john/Wallpapers/cycle/$wallpaper
 
 xsetroot -cursor_name left_ptr &
 
@@ -13,9 +10,11 @@ xautolock -time 10 -locker slock &
 
 xrdb -merge /home/john/.Xresources
 
-/usr/bin/ibus-daemon -d &
+/usr/bin/ibus-daemon -d --xim
 
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --transparent true --alpha 100 --tint 0x000000 --height 18 &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --transparent true --alpha 100 --tint 0x000000 --height 30 &
+
+_curtile=/tmp/.currenttile
+[[ -S $_curtile ]] || mkfifo $_curtile
 
 exec xmonad
-

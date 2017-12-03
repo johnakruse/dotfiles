@@ -8,7 +8,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set undofile
-set undodir=/home/uportal/.vimundo
+set undodir=/home/john/.vimundo
 set mouse=a
 set clipboard=unnamedplus
 set pastetoggle=<F2>
