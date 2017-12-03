@@ -5,9 +5,16 @@ xterm*background: grey7
 xterm*foreground: goldenrod
 xterm*faceName: Liberation Mono:size=11:antialias=false
 xterm*font: 7x13
-URxvt.font: xft:Liberation Mono:bold:size=11
+URxvt.font: xft:Liberation Mono:bold:size=13,xft:AR PL UKai CN:book:size=13
 URxvt*depth: 32
-URxvt*foreground: #daa520
-URxvt*background: rgba:0000/0000/0000/8888
-URxvt*shading: 0
+URxvt*foreground: #d4d4d4
+URxvt*background: [80]#03040d
 URxvt*scrollBar: false
+URxvt.inputMethod: ibus
+URxvt*fading: 0
+!URxvt*fadeColor: [40]#000000
+URxvt.print-pipe: "cat > /dev/null"
+URxvt.preeditType: OverTheSpot
+URxvt*eightBitInput: false
+URxvt*metaSendsEscape: true
+URxvt*modifier: alt
