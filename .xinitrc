@@ -1,12 +1,16 @@
 xcompmgr -cCf -D5 &
 
-sleep 1
+wallpaper=$(ls /home/john/Wallpapers/cycle/ | shuf -n 1)
 
 hsetroot -cover /home/john/Wallpapers/cycle/$wallpaper
 
 xsetroot -cursor_name left_ptr &
 
-xautolock -time 10 -locker slock &
+synclient VertScrollDelta=-55&
+
+syndaemon -i 0.5 -t -K -R &
+
+xautolock -time 10 -corners 0--- -locker lock &
 
 xrdb -merge /home/john/.Xresources
 
